@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link 
+        rel="stylesheet" 
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous"
+    >
+     <!-- Font aswesome icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- End of Font awesome icons -->
+    <title>Spend Budget</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg  navbar-light bg-light">
+      <!-- Image and text -->
+      <a class="navbar-brand" href="#">
+      <img src="/images/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      BudgetCheck
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">HOME <span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="allocate-budget.html">RECORD BUDGET ALLOCATION <span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="spend-budget.html">RECORD BUDGET SPENDING <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="budget-blockchain-diagram.html">VIEW BLOCKCHAIN DIAGRAM <span class="sr-only"></span></a>
+          </li>
+          <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Projects
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Allocate Fund</a>
+              <a class="dropdown-item" href="#">View Available Fund </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li> -->
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-sm ">
+          <h1>RECORD BUDGET SPENDING</h1>
+          <div class="card ">
+            <div class="card-header">
+                <div class="card-title">
+                        RECORD BUDGET SPENDING
+                </div>
+            </div>
+            <div class="card-body">
+                <form action="" method="post">
+                    <div class="form-group">
+                        <label for="parentType">Select  Budget</label>
+                        <select name="budget_allocationSelect" id="budget_allocationSelect" class="form-control" required aria-required="true">
+                        
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="reason" id="reason" class="form-control" placeholder="Reason (e.g Building of Roads)" aria-placeholder="Reason (e.g Building of Roads)" required aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <input type="number" name="amount" id="amount" class="form-control" placeholder="Total Amount in Naira (e.g 5000000000)" aria-placeholder="Total Amount in Naira (e.g 5000000000)" required aria-required="true">
+                    </div>
+                    <input type="text" name="_type" id="_type" value="budget_allocation" hidden aria-hidden="true">
+                    <div class="form-group">
+                        <input type="text" name="description" id="description" class="form-control" placeholder="Description" aria-placeholder="Description" required aria-required="true">
+                    </div>
+                    <input type="datetime" name="timestamp" id="timestamp" hidden aria-hidden="true">
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-arrow-right"></i> RECORD BUDGET SPENDING</button>
+                </form>
+            </div>
+            <button type="button" class="btn btn-primary" id="btnModal"data-toggle="modal" data-target="#allocated-modal" hidden></button>
+          <div class="modal fade" tabindex="-1" role="dialog" id="allocated-modal">
+            <div class="modal-dialog" role="document">
+              <div class="content">
+                <div class="modal-header alert alert-success">
+                  <h5 class="modal-title">Budget Spending Record Successfully</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body" id="newBudget_spendingModal">
+                  
+                </div>
+                <div class="modal-footer">
+                  <button type="button" data-dismiss="modal" class="btn btn-primary">Okay</button>
+                </div>
+              </div>
+            </div>
+          </div>
+            <div class="card-footer">
+                <small>Spending budget</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class=" row justify-content-center bg-light">Designed by Team BudgetCheck</footer>
+    <script id="budget_spendingModalTemplate" type="x-tmpl-mustache">
+        {{#newBudget_spending}}
+          <div class="card">
+            <div class="card-body">
+              <label>Budget: </label><span> {{budget}} </span><br/>
+              <label>Reason: </label><span> {{reason}} </span> <br/>
+              <label>Description: </label> <span> {{description}} </span> <br/>
+              <label>Amount(naira): </label> <span> {{amount}} </span> <br/>
+              <label>Time: </label> <span>{{timestamp}}</span><br/>
+            </div>
+          </div>
+        {{/newBudget_spending}}
+    </script>
+    <script id="budget_allocationOptionTemplate" type="x-tmpl-mustache">
+      <option>Select Your Option</option>
+      {{#budget_allocations}}
+      <option value="{{to}}">{{to}}</option>
+      {{/budget_allocations}}
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+    <script src="spend-budget.js"></script>
+ </body>
+</html>
