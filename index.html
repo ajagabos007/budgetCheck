@@ -61,165 +61,101 @@
         <div class="col-sm ">
           <h1>HOME</h1>
           <div class="accordion" id="accordionExample">
-  <div class="card">
-    <div class="card-header" id="headingOne">
-      <h2 class="mb-0">
-        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          VIEW BUDGET ALLOCATION
-        </button>
-      </h2>
-    </div>
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h2 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  VIEW BUDGET ALLOCATION
+                </button>
+              </h2>
+            </div>
 
-    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-      <div class="card-body">
-         <div class="card ">
-            <div class="card-header bg-info">
-                <div class="card-title">
-                       BUDGET ALLOCATION <span class="badge badge-pill badge-danger" id="totalBudget_allocations"></span>
-                      <a href="allocate-budget.html" class="float-right" title="Record Budget Allocation">
-                        <span class="badge badge-pill badge-success" ><i class="fas fa-plus"></i></span>
-                      </a>
+              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                   <div class="card ">
+                      <div class="card-header bg-info">
+                          <div class="card-title">
+                                 BUDGET ALLOCATION <span class="badge badge-pill badge-danger" id="totalBudget_allocations"></span>
+                                <a href="allocate-budget.html" class="float-right" title="Record Budget Allocation">
+                                  <span class="badge badge-pill badge-success" ><i class="fas fa-plus"></i></span>
+                                </a>
+                          </div>
+                      </div>
+                      <div class="card-body">
+                          <table class="table table-responsive table-striped">
+                            <thead>
+                              <tr>
+                                <th>#</th>
+                                <th>Allocated From</th>
+                                <th>Allocated To</th>
+                                <th>Description</th>
+                                <th>Amount(Naira)</th>
+                                <th>Time</th>
+                              </tr>
+                            </thead>
+                            <tbody id="budget_allocationTableBody">
+                             
+                            </tbody>
+                          </table>
+                      </div>
+                      <div class="card-footer">
+                          <small>All budget allocation</small>
+                      </div>
+                    </div>
                 </div>
+              </div>
             </div>
-            <div class="card-body">
-                <table class="table table-responsive table-striped">
-                  <thead>
-                    <tr>
-                      <th>#</th>
-                      <th>Allocated From</th>
-                      <th>Allocated To</th>
-                      <th>Description</th>
-                      <th>Amount(Naira)</th>
-                      <th>Time</th>
-                    </tr>
-                  </thead>
-                  <tbody id="budget_allocationTableBody">
-                   
-                  </tbody>
-                </table>
-            </div>
-            <div class="card-footer">
-                <small>All budget allocation</small>
-            </div>
-          </div>
-      </div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-header" id="headingTwo">
-      <h2 class="mb-0">
-        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          vIEW BUDGET SPENDING
-        </button>
-      </h2>
-    </div>
-    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-      <div class="card-body">
-         <div class="card "> 
-            <div class="card-header bg-info">
-                <div class="card-title">
-                      BUDGET SPENDING <span class="badge badge-pill badge-danger" id="totalBudget_spendings"></span>
-                      <a href="spend-budget.html" class="float-right" title="Record Budget Spending">
-                        <span class="badge badge-pill badge-success" ><i class="fas fa-plus"></i></span>
-                      </a>
-                      
+            <div class="card">
+              <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    VIEW BUDGET SPENDING
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+                   <div class="card "> 
+                      <div class="card-header bg-info">
+                          <div class="card-title">
+                                BUDGET SPENDING <span class="badge badge-pill badge-danger" id="totalBudget_spendings"></span>
+                                <a href="spend-budget.html" class="float-right" title="Record Budget Spending">
+                                  <span class="badge badge-pill badge-success" ><i class="fas fa-plus"></i></span>
+                                </a>
+                                
+                          </div>
+                      </div>
+                      <div class="card-body">
+                          <table class="table table-responsive table-striped">
+                            <thead>
+                              <tr>
+                                <th>#</th>
+                                <th>Budget </th>
+                                <th>Reason</th>
+                                <th>Description</th>
+                                <th>Amount(Naira)</th>
+                                <th>Time</th>
+                              </tr>
+                            </thead>
+                            <tbody id="budget_spendingTBody">
+                            
+                            </tbody>
+                          </table>
+                      </div>
+                      <div class="card-footer">
+                          <small>All budget spending</small>
+                      </div>
+                    </div>
                 </div>
+              </div>
             </div>
-            <div class="card-body">
-                <table class="table table-responsive table-striped">
-                  <thead>
-                    <tr>
-                      <th>#</th>
-                      <th>Budget </th>
-                      <th>Reason</th>
-                      <th>Description</th>
-                      <th>Amount(Naira)</th>
-                      <th>Time</th>
-                    </tr>
-                  </thead>
-                  <tbody id="budget_spendingTBody">
-                  
-                  </tbody>
-                </table>
+            <div class="card">
+              <div class="card-header" id="headingThree">
+                <h2 class="mb-0">
+                    <a href="budget-blockchain-diagram.html" class="btn btn-link collapsed">VIEW BUDGET BLOCKCHAIN DIAGRAM </a>
+                </h2>
+              </div>
             </div>
-            <div class="card-footer">
-                <small>All budget spending</small>
-            </div>
-          </div>
-      </div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-header" id="headingThree">
-      <h2 class="mb-0">
-          <a href="budget-blockchain-diagram.html" class="btn btn-link collapsed">View Budget BlockChain Diagram </a>
-      </h2>
-    </div>
-  </div>
-</div>
-          <a href="budget-blockchain-diagram.html">View Budget BlockChain Diagram </a>
-          <br>
-          <div class="card ">
-              <div class="card-header bg-info">
-                  <div class="card-title">
-                         BUDGET ALLOCATION <span class="badge badge-pill badge-danger" id="totalBudget_allocations"></span>
-                        <a href="allocate-budget.html" class="float-right" title="Record Budget Allocation">
-                          <span class="badge badge-pill badge-success" ><i class="fas fa-plus"></i></span>
-                        </a>
-                  </div>
-              </div>
-              <div class="card-body">
-                  <table class="table table-responsive table-striped">
-                    <thead>
-                      <tr>
-                        <th>#</th>
-                        <th>Allocated From</th>
-                        <th>Allocated To</th>
-                        <th>Description</th>
-                        <th>Amount(Naira)</th>
-                        <th>Time</th>
-                      </tr>
-                    </thead>
-                    <tbody id="budget_allocationTableBody">
-                     
-                    </tbody>
-                  </table>
-              </div>
-              <div class="card-footer">
-                  <small>All budget allocation</small>
-              </div>
-          </div>
-          <br>
-          <div class="card "> 
-              <div class="card-header bg-info">
-                  <div class="card-title">
-                        BUDGET SPENDING <span class="badge badge-pill badge-danger" id="totalBudget_spendings"></span>
-                        <a href="spend-budget.html" class="float-right" title="Record Budget Spending">
-                          <span class="badge badge-pill badge-success" ><i class="fas fa-plus"></i></span>
-                        </a>
-                        
-                  </div>
-              </div>
-              <div class="card-body">
-                  <table class="table table-responsive table-striped">
-                    <thead>
-                      <tr>
-                        <th>#</th>
-                        <th>Budget </th>
-                        <th>Reason</th>
-                        <th>Description</th>
-                        <th>Amount(Naira)</th>
-                        <th>Time</th>
-                      </tr>
-                    </thead>
-                    <tbody id="budget_spendingTBody">
-                    
-                    </tbody>
-                  </table>
-              </div>
-              <div class="card-footer">
-                  <small>All budget spending</small>
-              </div>
           </div>
         </div>
       </div>
